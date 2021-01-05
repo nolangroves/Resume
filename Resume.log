@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.30)  3 JAN 2021 13:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.30)  5 JAN 2021 13:31
 entering extended mode
 **./Resume.tex
 (Resume.tex
@@ -883,8 +883,8 @@ Package rerunfilecheck Info: File `Resume.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  21901 strings out of 481629
- 400493 string characters out of 2918200
- 705326 words of memory out of 3000000
+ 400491 string characters out of 2918200
+ 705305 words of memory out of 3000000
  38263 multiletter control sequences out of 15000+200000
  455737 words of font info for 91 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
@@ -899,7 +899,7 @@ x/texmfs/install/fonts/type1/public/lm/lmsso10.pfb></home/legomaniack/.miktex/t
 exmfs/install/fonts/type1/public/lm/lmsso12.pfb></home/legomaniack/.miktex/texm
 fs/install/fonts/type1/public/lm/lmsso9.pfb></home/legomaniack/.miktex/texmfs/i
 nstall/fonts/type1/public/marvosym/marvosym.pfb>
-Output written on Resume.pdf (1 page, 190448 bytes).
+Output written on Resume.pdf (1 page, 189615 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)
