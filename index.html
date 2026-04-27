@@ -31,11 +31,6 @@
       letter-spacing: 0.02em;
     }
 
-    .links {
-      display: flex;
-      gap: 12px;
-    }
-
     .links a {
       color: #a8b4d8;
       text-decoration: none;
@@ -51,10 +46,25 @@
       color: #fff;
     }
 
-    embed {
+    object {
       flex: 1;
       width: 100%;
       border: none;
+    }
+
+    .fallback {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: #555;
+    }
+
+    .fallback a {
+      color: #1a1a2e;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -65,6 +75,11 @@
       <a href="Resume.pdf" download>Download PDF</a>
     </nav>
   </header>
-  <embed src="Resume.pdf" type="application/pdf">
+  <object data="Resume.pdf" type="application/pdf">
+    <div class="fallback">
+      <p>PDF preview unavailable in this browser.</p>
+      <a href="Resume.pdf" download>Download Resume.pdf</a>
+    </div>
+  </object>
 </body>
 </html>

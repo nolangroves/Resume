@@ -11,7 +11,7 @@
     {\bfseries #2}\hfill{\itshape #1}\\%
     {\itshape #3}, #4%
     \ifx\relax#5\relax\else{} $\cdot$ #5\fi\par\nopagebreak%
-    #6\par\medskip%
+    #6\par\smallskip%
   }
   % Widen quote slightly so it wraps in fewer lines
   \setlength{\quotewidth}{0.74\textwidth}
@@ -25,32 +25,20 @@
 
 % ─── Summary (variants can override before \input{Resume}) ───────────────────
 \providecommand{\resumesummary}{%
-  Robotics MS graduate from ASU with experience in ML engineering, software development, physics research, and teaching.
-  Completed a thesis implementing transformer-based policies for multi-agent reinforcement learning.
-  Background spans multiple programming languages, applied electronics, and hands-on fabrication.%
+  Software engineer with an MS in Robotics from ASU and professional experience building end-to-end ML pipelines.
+  Career spans data engineering, physics research instrumentation, and simulation-based RL --
+  comfortable operating across technical disciplines.%
 }
 \quote{\resumesummary}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \begin{document}
 \makecvtitle
+\vspace{-1em}
 
 \section{Education}
   \cventry{2023 -- 2026}{Master's Degree in Robotics and Autonomous Systems}{Arizona State University}{Tempe, AZ}{4.0}{}
   \cventry{2017 -- 2021}{Bachelor's Degree in Physics, CS Minor}{Texas State University}{San Marcos, TX}{3.97}{}
-
-\section{Notable Coursework}
-  \cvitemwithcomment{}{Master's Thesis}{Transformer-based policies for multi-agent reinforcement learning in simulation}
-  \cvitemwithcomment{}{Multi-Robot Systems}{Numerous different control theories for managing multiple robots}
-  \cvitemwithcomment{}{Modeling and Control of Robots}{Forward and reverse kinematic modeling of robots}
-  \cvitemwithcomment{}{Machine Vision}{Foundational theory of machine vision and projects using OpenCV}
-  \cvitemwithcomment{}{Artificial Intelligence}{Classical AI agent theory and algorithms}
-
-\section{Technical Skills}
-  \cvitem{Languages}{Python, Java, JavaScript, C++}
-  \cvitem{Libraries}{Pandas, PyTorch, OpenCV, scikit-learn, NumPy, MuJoCo}
-  \cvitem{Fabrication}{CNC mill, Waterjet, Wood shop, Welding, Laser cutter}
-  \cvitem{Other}{Linux, Git, Excel}
 
 \section{Experience}
   \cventry{June 2022 -- June 2023}{Data Analyst}{Affinaquest}{Remote}{}{%
@@ -61,10 +49,6 @@
             within predictive analytics using Python technologies such as scikit-learn, NumPy, and Pandas.
       \item Utilized extensive client databases for a classification problem, forecasting potential new donors
             from historical data.
-      \item Developed a comprehensive data pipeline from scratch, integrating Python for data ingestion,
-            cleaning, and feature extraction.
-      \item Streamlined delivery of final predictions, specializing in solving the classification challenge
-            of predicting potential new donors.
     \end{itemize}%
   }
 
@@ -73,8 +57,7 @@
   }
 
   \cventry{May 2019 -- May 2021}{Lab Technician}{Texas State University}{San Marcos, TX}{}{%
-    Worked under Dr.\ Mark Wistey in Molecular Beam Epitaxy (MBE) research. Resolved technical and
-    mechanical issues and collaborated with a team for general ultra-high vacuum lab operation.
+    Worked under Dr.\ Mark Wistey in Molecular Beam Epitaxy (MBE) research.
     Conducted guided research applying machine learning to analyze spectra.
     \begin{itemize}
       \item Modified code to allow digital reading of unsupported sensors through Molly control software;
@@ -94,5 +77,18 @@
       \item Staffed the physics help center to assist students across a variety of courses.
     \end{itemize}%
   }
+
+\section{Technical Skills}
+  \cvitem{Languages}{Python, Java, JavaScript, C++}
+  \cvitem{Libraries}{Pandas, PyTorch, OpenCV, scikit-learn, NumPy, MuJoCo}
+  \cvitem{Tools}{Linux, Git, Excel}
+  \cvitem{Fabrication}{CNC mill, Waterjet, Wood shop, Welding, Laser cutter}
+
+\section{Notable Coursework}
+  \cvitemwithcomment{}{Master's Thesis}{Transformer-based policies for multi-agent reinforcement learning in simulation}
+  \cvitemwithcomment{}{Multi-Robot Systems}{Numerous different control theories for managing multiple robots}
+  \cvitemwithcomment{}{Modeling and Control of Robots}{Forward and reverse kinematic modeling of robots}
+  \cvitemwithcomment{}{Machine Vision}{Foundational theory of machine vision and projects using OpenCV}
+  \cvitemwithcomment{}{Artificial Intelligence}{Classical AI agent theory and algorithms}
 
 \end{document}
