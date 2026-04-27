@@ -1,0 +1,28 @@
+{
+  "name": "Resume (LaTeX)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended make",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop"
+      ],
+      "settings": {
+        "latex-workshop.latex.tools": [
+          {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": ["-interaction=nonstopmode", "-synctex=1", "%DOC%"]
+          }
+        ],
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "pdflatex x2",
+            "tools": ["pdflatex", "pdflatex"]
+          }
+        ],
+        "latex-workshop.view.pdf.viewer": "tab"
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+name: Build Resume PDFs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # allows manual trigger from GitHub UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended
+
+      - name: Build visual PDF
+        run: |
+          pdflatex -interaction=nonstopmode -jobname=Resume_Visual Resume.tex
+          pdflatex -interaction=nonstopmode -jobname=Resume_Visual Resume.tex
+
+      - name: Build ATS PDF
+        run: |
+          pdflatex -interaction=nonstopmode -jobname=Resume_ATS "\def\ATSMODE{1}\input{Resume}"
+          pdflatex -interaction=nonstopmode -jobname=Resume_ATS "\def\ATSMODE{1}\input{Resume}"
+
+      - name: Build variant PDFs
+        # Builds any .tex file found in variants/
+        run: |
+          for f in variants/*.tex; do
+            [ -f "$f" ] || continue
+            name=$(basename "$f" .tex)
+            pdflatex -interaction=nonstopmode -jobname="Resume_${name}" "\input{${f}}"
+            pdflatex -interaction=nonstopmode -jobname="Resume_${name}" "\input{${f}}"
+            pdflatex -interaction=nonstopmode -jobname="Resume_${name}_ATS" "\def\ATSMODE{1}\input{${f}}"
+            pdflatex -interaction=nonstopmode -jobname="Resume_${name}_ATS" "\def\ATSMODE{1}\input{${f}}"
+          done
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: "*.pdf"
+          retention-days: 90

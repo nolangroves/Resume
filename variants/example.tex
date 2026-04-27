@@ -1,0 +1,19 @@
+% variants/example.tex
+%
+% Template for a tailored resume variant.
+% Build with:   make variant V=example
+% Produces:     Resume_example.pdf + Resume_example_ATS.pdf
+%
+% Only define what's DIFFERENT from Resume.tex.
+% Everything else is inherited automatically.
+
+% ─── Override the summary ────────────────────────────────────────────────────
+\def\resumesummary{%
+  Robotics MS candidate specializing in multi-agent reinforcement learning,
+  with hands-on experience in machine learning pipelines and autonomous systems.
+  Seeking a role where I can apply transformer-based policy learning to
+  real-world robotics challenges.%
+}
+
+% ─── Pull in the master file ─────────────────────────────────────────────────
+\input{Resume}

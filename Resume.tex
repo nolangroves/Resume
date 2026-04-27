@@ -1,100 +1,106 @@
-\documentclass[10pt,a4paper,sans]{moderncv}
-\moderncvstyle{classic}
-\moderncvcolor{blue}
+\documentclass[10pt,letterpaper,sans]{moderncv}
 
-% Sets margins
-\usepackage[scale=0.87]{geometry}
+% ─── Mode: pass \def\ATSMODE{1} via command line for ATS output ───────────────
+\ifdefined\ATSMODE
+  \moderncvstyle{classic}
+  \moderncvcolor{black}
+  \usepackage[scale=0.92]{geometry}
+  % Redefine cventry to output description as plain text (fixes {list-item parsing)
+  \AtBeginDocument{
+    \renewcommand*{\cventry}[6]{%
+      {\bfseries #2}\hfill{\itshape #1}\\%
+      {\itshape #3}, #4%
+      \ifx\relax#5\relax\else{} $\cdot$ #5\fi\par\nopagebreak%
+      #6\par\medskip%
+    }
+  }
+\else
+  \moderncvstyle{classic}
+  \moderncvcolor{blue}
+  \usepackage[scale=0.87]{geometry}
+\fi
+
 \usepackage[utf8]{inputenc}
 \usepackage{multicol}
 
+% ─── Personal info ────────────────────────────────────────────────────────────
 \name{Nolan}{Groves}
 \email{ngroves@asu.edu}
 \phone[mobile]{(512)~568~2649}
 \social[github]{https://github.com/nolangroves/Portfolio}
-%\photo[64pt][0.4pt]{picture}
-\quote{Graduate student at ASU with lab work, software development, research, and teaching experience. 
-Currently finishing my Master's thesis regarding Multi-agent reinforcment learning in a virtual domain. 
-%Seeking full-time employment in robotics and autonomous systems following graduation later this year.
-%Looking to specialize in autonomous systems. 
-Worked to develop predictive analytics software using machine learning to analyze client data.
-Extensive experience in a ultra-high vacuum research lab with both hardware and software.  
-Participated in research projects including applying machine learning to predict data. Broad exposure to physics, applied electronics, multiple programming languages, and advanced math. }
 
+% ─── Summary (variants can override before \input{Resume}) ───────────────────
+\providecommand{\resumesummary}{%
+  Graduate student at ASU with lab work, software development, research, and teaching experience.
+  Currently finishing my Master's thesis regarding multi-agent reinforcement learning in a virtual domain.
+  Worked to develop predictive analytics software using machine learning to analyze client data.
+  Extensive experience in an ultra-high vacuum research lab with both hardware and software.
+  Broad exposure to physics, applied electronics, multiple programming languages, and advanced math.%
+}
+\quote{\resumesummary}
+
+% ─────────────────────────────────────────────────────────────────────────────
 \begin{document}
 \makecvtitle
 
 \section{Education}
-    \cventry{2023 -- Now}{Master's degree in Robotics and Autonomous Systems}{Arizona State University}{Tempe, AZ}{4.0}{}
-	\cventry{2017 -- 2021}{Bachelors degree in Physics with CS minor}{Texas State University}{San Marcos, TX}{3.97}{}
-	%\begin{multicols}{3}
-	%\begin{itemize}
-	%    \item Applied Electronics
-	%    \item Independent Research
-	%    \item Calculus III
-	%    \item Differential Equations
-	%    \item Assembly Language
-	%    \item Data Structures \& Algorithms
-	%\end{itemize}
-	%\end{multicols}}
-	
-	%\cventry{2012 -- 2016}{IB Diploma}{Westwood High School}{Austin, TX}{4.0}{}
+  \cventry{2023 -- Present}{Master's Degree in Robotics and Autonomous Systems}{Arizona State University}{Tempe, AZ}{4.0}{}
+  \cventry{2017 -- 2021}{Bachelor's Degree in Physics, CS Minor}{Texas State University}{San Marcos, TX}{3.97}{}
+
 \section{Notable Coursework}
-    \cvitemwithcomment{}{Master's Thesis}{Applying transformers to multi-agent reinforcement learning policy in virtual spaces}
-    \cvitemwithcomment{}{Muti-Robot Systems}{Numerous different control-theories for managing multiple robots}
-    \cvitemwithcomment{}{Modeling and Control of Robots}{Forward and reverse kinematic modeling of robots}
-    \cvitemwithcomment{}{Machine Vision}{Foundational theory of machine vision and projects using OpenCV}
-    \cvitemwithcomment{}{Artificial Intelligence}{Classical AI agent theory and algorithms}
+  \cvitemwithcomment{}{Master's Thesis}{Applying transformers to multi-agent reinforcement learning policy in virtual spaces}
+  \cvitemwithcomment{}{Multi-Robot Systems}{Numerous different control theories for managing multiple robots}
+  \cvitemwithcomment{}{Modeling and Control of Robots}{Forward and reverse kinematic modeling of robots}
+  \cvitemwithcomment{}{Machine Vision}{Foundational theory of machine vision and projects using OpenCV}
+  \cvitemwithcomment{}{Artificial Intelligence}{Classical AI agent theory and algorithms}
+
 \section{Technical Skills}
-    \cvitem{Languages}{Python, Java, Javascript, C++}
-    \cvitem{Libraries}{Pandas, Torch, OpenCV, Scikitlearn, numpy, MuJoCo}
-    \cvitem{Fabrication}{CNC mill, Waterjet, Wood-shop, Welding, Laser cutter}
-    \cvitem{Other}{Linux, Excel}
-    %\cvlistdoubleitem{Python}       {C++}
-    %\cvlistdoubleitem{Java}         {JavaScript}
-    %\cvlistdoubleitem{Linux}        {TensorFlow}  
+  \cvitem{Languages}{Python, Java, JavaScript, C++}
+  \cvitem{Libraries}{Pandas, PyTorch, OpenCV, scikit-learn, NumPy, MuJoCo}
+  \cvitem{Fabrication}{CNC mill, Waterjet, Wood shop, Welding, Laser cutter}
+  \cvitem{Other}{Linux, Git, Excel}
 
 \section{Experience}
-\cventry{June 2022 -- June 2023}{Data Analyst}{Affinaquest}{Remote}{}{Worked to develop software implementing a complete pipeline to operate on client data, from the raw input all the way through to selecting and training machine learning models
-\begin{itemize}
-	\item Implemented machine learning algorithms, including XGBoost, Random Forest, and Logistic Regression, within predictive analytics using Python technologies such as scikit-learn, numpy, and pandas. 
-\item Utilized extensive client databases for a classification problem, forecasting potential new donors from historical data
-\item Developed a comprehensive data pipeline from scratch, integrating Python for data ingestion, cleaning, and feature extraction. 
-\item Streamlined the process for delivering final predictions efficiently, specializing in solving the classification challenge of predicting potential new donors
-\end{itemize}}
-\cventry{Sep 2021 -- Jun 2022}{Instructor}{Mathnasium}{Austin, TX}{}{Helped K-12 math students in a tailored curriculum course and one-on-one tutoring.}
-\cventry{May 2019 -- May 2021}{Lab Tech}{Texas State University}{San Marcos, TX}{}{Worked under Dr. Mark Wistey in Molecular Beam Epitaxy (MBE) research. Resolved technical/mechanical issues and collaborated with a team for general ultra-high vacuum lab operation. Also worked alongside him doing guided research using machine learning to analyze spectra.
-\begin{itemize}
-	\item Modified code to allow digital reading of unsupported sensors through Molly control software, as well as debugging and implementing various other hardware control interfaces.
-    \item Helped design and build water chiller units with digital controls.
-    \item Oversaw transfer of control systems to new hardware and operating systems.
-    \item Preformed general maintenance work and operation on ultra-clean systems, ultra-high vacuum systems, high voltage systems, arsenic contaminated systems, and others. 
-    %\item Designed and implemented neural networks using TensorFlow to categorize samples based on their spectra.
-\end{itemize}}
+  \cventry{June 2022 -- June 2023}{Data Analyst}{Affinaquest}{Remote}{}{%
+    Developed software implementing a complete pipeline to operate on client data, from raw input through
+    selecting and training machine learning models.
+    \begin{itemize}
+      \item Implemented machine learning algorithms including XGBoost, Random Forest, and Logistic Regression
+            within predictive analytics using Python technologies such as scikit-learn, NumPy, and Pandas.
+      \item Utilized extensive client databases for a classification problem, forecasting potential new donors
+            from historical data.
+      \item Developed a comprehensive data pipeline from scratch, integrating Python for data ingestion,
+            cleaning, and feature extraction.
+      \item Streamlined delivery of final predictions, specializing in solving the classification challenge
+            of predicting potential new donors.
+    \end{itemize}%
+  }
 
-\cventry{Aug 2019 -- May 2021}{Learning Assistant/Lab Instructor}{Texas State University}{San Marcos, TX}{}{Worked with various teachers to teach the intro Electricity and Magnetism course and the Advanced Lab course
-\begin{itemize}
-    \item Taught the fundamentals of electronic and mechanical systems using independent projects including a high-vacuum system and an automated weather station
-    %\item Learned the pedagogical models backing the Learning Assistant program and modern learning in general
-    \item Staffed the physics help center to assist with a variety of problems from various classes.
-\end{itemize}}
-%\cventry{Nov 2017 -- Current, Intermittently}{ Contractor}{Salsa Labs}{Austin, TX}{}{Preform data normalization, transformation, and cleanup on client data for import into a CRM database}
-%\cventry{Apr 2017 -- Aug 2018}{Cashier}{Which Wich Superior Sandwiches}{Austin, TX}{}{}      
-    
-%\section{Fabrication Skills}
-    %\cvlistdoubleitem{Welding}      {Metal Lathe}
-    %\cvlistdoubleitem{Water Jet}    {CNC Mill}
-    %\cvlistdoubleitem{Wood Shop}    {Laser Cutter}
+  \cventry{Sep 2021 -- Jun 2022}{Instructor}{Mathnasium}{Austin, TX}{}{%
+    Helped K--12 math students through a tailored curriculum and one-on-one tutoring.%
+  }
 
-%\section{General Skills}
-	%\cvlistdoubleitem{Problem Solver}			{Strong Mediator}
-	%\cvlistdoubleitem{Fast Learner}				{Excellent Teacher/Explainer}
-	%\cvlistdoubleitem{Levelheaded Personality}	{Creative Thinker}
+  \cventry{May 2019 -- May 2021}{Lab Technician}{Texas State University}{San Marcos, TX}{}{%
+    Worked under Dr.\ Mark Wistey in Molecular Beam Epitaxy (MBE) research. Resolved technical and
+    mechanical issues and collaborated with a team for general ultra-high vacuum lab operation.
+    Conducted guided research applying machine learning to analyze spectra.
+    \begin{itemize}
+      \item Modified code to allow digital reading of unsupported sensors through Molly control software;
+            debugged and implemented various other hardware control interfaces.
+      \item Helped design and build water chiller units with digital controls.
+      \item Oversaw transfer of control systems to new hardware and operating systems.
+      \item Performed general maintenance and operation on ultra-clean, ultra-high vacuum, high voltage,
+            and arsenic-contaminated systems.
+    \end{itemize}%
+  }
 
-%\section{Miscellaneous}
-	%\cvlistitem{Participated in 4 years of a FIRST Robotics team and held driver and leadership positions}
-	
-	%\cvlistitem{Took part in 3 years of marching band that participated at the state level}
-	%\cvlistitem{Member of Mensa}
-	%\cvlistitem{Volunteered at Habitat for Humanity over the course of 2 years}
-	%\cvlistitem{Have fostered puppies and kittens from a local shelter for the past 4 years}
+  \cventry{Aug 2019 -- May 2021}{Learning Assistant / Lab Instructor}{Texas State University}{San Marcos, TX}{}{%
+    Worked with faculty to teach introductory Electricity \& Magnetism and the Advanced Lab course.
+    \begin{itemize}
+      \item Taught fundamentals of electronic and mechanical systems through independent projects including
+            a high-vacuum system and an automated weather station.
+      \item Staffed the physics help center to assist students across a variety of courses.
+    \end{itemize}%
+  }
+
 \end{document}
