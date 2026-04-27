@@ -1,27 +1,21 @@
 \documentclass[10pt,letterpaper,sans]{moderncv}
-
-% ─── Mode: pass \def\ATSMODE{1} via command line for ATS output ───────────────
-\ifdefined\ATSMODE
-  \moderncvstyle{classic}
-  \moderncvcolor{black}
-  \usepackage[scale=0.92]{geometry}
-  % Redefine cventry to output description as plain text (fixes {list-item parsing)
-  \AtBeginDocument{
-    \renewcommand*{\cventry}[6]{%
-      {\bfseries #2}\hfill{\itshape #1}\\%
-      {\itshape #3}, #4%
-      \ifx\relax#5\relax\else{} $\cdot$ #5\fi\par\nopagebreak%
-      #6\par\medskip%
-    }
-  }
-\else
-  \moderncvstyle{classic}
-  \moderncvcolor{blue}
-  \usepackage[scale=0.87]{geometry}
-\fi
-
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\usepackage[scale=0.92]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{multicol}
+
+% Flat cventry: cleaner layout and ATS-parseable (no moderncv minipage overhead)
+\AtBeginDocument{
+  \renewcommand*{\cventry}[6]{%
+    {\bfseries #2}\hfill{\itshape #1}\\%
+    {\itshape #3}, #4%
+    \ifx\relax#5\relax\else{} $\cdot$ #5\fi\par\nopagebreak%
+    #6\par\medskip%
+  }
+  % Widen quote slightly so it wraps in fewer lines
+  \setlength{\quotewidth}{0.74\textwidth}
+}
 
 % ─── Personal info ────────────────────────────────────────────────────────────
 \name{Nolan}{Groves}
@@ -42,7 +36,7 @@
 \makecvtitle
 
 \section{Education}
-  \cventry{2023 -- May 2026}{Master's Degree in Robotics and Autonomous Systems}{Arizona State University}{Tempe, AZ}{4.0}{}
+  \cventry{2023 -- 2026}{Master's Degree in Robotics and Autonomous Systems}{Arizona State University}{Tempe, AZ}{4.0}{}
   \cventry{2017 -- 2021}{Bachelor's Degree in Physics, CS Minor}{Texas State University}{San Marcos, TX}{3.97}{}
 
 \section{Notable Coursework}
