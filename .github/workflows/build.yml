@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -15,7 +17,7 @@ jobs:
       - name: Install LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
 
       - name: Build visual PDF
         run: |
@@ -38,6 +40,14 @@ jobs:
             pdflatex -interaction=nonstopmode -jobname="Resume_${name}_ATS" "\def\ATSMODE{1}\input{${f}}"
             pdflatex -interaction=nonstopmode -jobname="Resume_${name}_ATS" "\def\ATSMODE{1}\input{${f}}"
           done
+
+      - name: Commit built PDFs to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Resume_Visual.pdf Resume_ATS.pdf
+          git diff --staged --quiet || git commit -m "ci: update built PDFs [skip ci]"
+          git push
 
       - name: Upload PDFs
         uses: actions/upload-artifact@v4
