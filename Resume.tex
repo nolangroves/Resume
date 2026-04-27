@@ -2,15 +2,19 @@
 \moderncvstyle{classic}
 \moderncvcolor{blue}
 
-\usepackage[scale=0.80]{geometry}
+% Sets margins
+\usepackage[scale=0.87]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{multicol}
 
 \name{Nolan}{Groves}
 \email{ngroves@asu.edu}
 \phone[mobile]{(512)~568~2649}
+\social[github]{https://github.com/nolangroves/Portfolio}
 %\photo[64pt][0.4pt]{picture}
 \quote{Graduate student at ASU with lab work, software development, research, and teaching experience. 
+Currently finishing my Master's thesis regarding Multi-agent reinforcment learning in a virtual domain. 
+%Seeking full-time employment in robotics and autonomous systems following graduation later this year.
 %Looking to specialize in autonomous systems. 
 Worked to develop predictive analytics software using machine learning to analyze client data.
 Extensive experience in a ultra-high vacuum research lab with both hardware and software.  
@@ -20,7 +24,7 @@ Participated in research projects including applying machine learning to predict
 \makecvtitle
 
 \section{Education}
-    \cventry{2023 -- Now}{Master's degree in Robotics and Autonomous Systems}{Arizona State University}{Tempe, AZ}{}{}
+    \cventry{2023 -- Now}{Master's degree in Robotics and Autonomous Systems}{Arizona State University}{Tempe, AZ}{4.0}{}
 	\cventry{2017 -- 2021}{Bachelors degree in Physics with CS minor}{Texas State University}{San Marcos, TX}{3.97}{}
 	%\begin{multicols}{3}
 	%\begin{itemize}
@@ -32,10 +36,25 @@ Participated in research projects including applying machine learning to predict
 	%    \item Data Structures \& Algorithms
 	%\end{itemize}
 	%\end{multicols}}
-	\cventry{2012 -- 2016}{IB Diploma}{Westwood High School}{Austin, TX}{4.0}{}
+	
+	%\cventry{2012 -- 2016}{IB Diploma}{Westwood High School}{Austin, TX}{4.0}{}
+\section{Notable Coursework}
+    \cvitemwithcomment{}{Master's Thesis}{Applying transformers to multi-agent reinforcement learning policy in virtual spaces}
+    \cvitemwithcomment{}{Muti-Robot Systems}{Numerous different control-theories for managing multiple robots}
+    \cvitemwithcomment{}{Modeling and Control of Robots}{Forward and reverse kinematic modeling of robots}
+    \cvitemwithcomment{}{Machine Vision}{Foundational theory of machine vision and projects using OpenCV}
+    \cvitemwithcomment{}{Artificial Intelligence}{Classical AI agent theory and algorithms}
+\section{Technical Skills}
+    \cvitem{Languages}{Python, Java, Javascript, C++}
+    \cvitem{Libraries}{Pandas, Torch, OpenCV, Scikitlearn, numpy, MuJoCo}
+    \cvitem{Fabrication}{CNC mill, Waterjet, Wood-shop, Welding, Laser cutter}
+    \cvitem{Other}{Linux, Excel}
+    %\cvlistdoubleitem{Python}       {C++}
+    %\cvlistdoubleitem{Java}         {JavaScript}
+    %\cvlistdoubleitem{Linux}        {TensorFlow}  
 
 \section{Experience}
-\cventry{June 2022 -- June 2023}{Data Analyst}{Affinaquest}{}{}{Worked to develop software implementing a complete pipeline to operate on client data, from the raw input all the way through to selecting and training machine learning models
+\cventry{June 2022 -- June 2023}{Data Analyst}{Affinaquest}{Remote}{}{Worked to develop software implementing a complete pipeline to operate on client data, from the raw input all the way through to selecting and training machine learning models
 \begin{itemize}
 	\item Implemented machine learning algorithms, including XGBoost, Random Forest, and Logistic Regression, within predictive analytics using Python technologies such as scikit-learn, numpy, and pandas. 
 \item Utilized extensive client databases for a classification problem, forecasting potential new donors from historical data
@@ -43,7 +62,7 @@ Participated in research projects including applying machine learning to predict
 \item Streamlined the process for delivering final predictions efficiently, specializing in solving the classification challenge of predicting potential new donors
 \end{itemize}}
 \cventry{Sep 2021 -- Jun 2022}{Instructor}{Mathnasium}{Austin, TX}{}{Helped K-12 math students in a tailored curriculum course and one-on-one tutoring.}
-\cventry{May 2019 -- May 2021}{Lab Tech}{Texas State University}{San Marcos, TX}{}{Worked under Dr. Mark Wistey in Molecular Beam Epitaxy (MBE) research. Resolved technical/mechanical issues and assisted with general ultra-high vacuum lab operation. Also worked alongside him doing guided research using machine learning to analyze spectra.
+\cventry{May 2019 -- May 2021}{Lab Tech}{Texas State University}{San Marcos, TX}{}{Worked under Dr. Mark Wistey in Molecular Beam Epitaxy (MBE) research. Resolved technical/mechanical issues and collaborated with a team for general ultra-high vacuum lab operation. Also worked alongside him doing guided research using machine learning to analyze spectra.
 \begin{itemize}
 	\item Modified code to allow digital reading of unsupported sensors through Molly control software, as well as debugging and implementing various other hardware control interfaces.
     \item Helped design and build water chiller units with digital controls.
@@ -59,12 +78,7 @@ Participated in research projects including applying machine learning to predict
     \item Staffed the physics help center to assist with a variety of problems from various classes.
 \end{itemize}}
 %\cventry{Nov 2017 -- Current, Intermittently}{ Contractor}{Salsa Labs}{Austin, TX}{}{Preform data normalization, transformation, and cleanup on client data for import into a CRM database}
-%\cventry{Apr 2017 -- Aug 2018}{Cashier}{Which Wich Superior Sandwiches}{Austin, TX}{}{}
-
-\section{Computer Skills}
-    \cvlistdoubleitem{Python}       {C++}
-    \cvlistdoubleitem{Java}         {JavaScript}
-    \cvlistdoubleitem{Linux}        {TensorFlow}        
+%\cventry{Apr 2017 -- Aug 2018}{Cashier}{Which Wich Superior Sandwiches}{Austin, TX}{}{}      
     
 %\section{Fabrication Skills}
     %\cvlistdoubleitem{Welding}      {Metal Lathe}
