@@ -1,10 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" style="width:100%; height:100%;">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Nolan Groves' Resume</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nolan Groves — Resume</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .links a {
+      color: #a8b4d8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border: 1px solid #3a4a7a;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .links a:hover {
+      background: #3a4a7a;
+      color: #fff;
+    }
+
+    embed {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+  </style>
 </head>
-  <body style="width:100%; height:100%; margin:0;">
-    <iframe src="https://docs.google.com/gview?url=https://github.com/nolangroves/Resume/raw/main/Resume.pdf&embedded=true" style="width:100%; height:100%;" frameborder="0"></iframe>
-  </body>
+<body>
+  <header>
+    <h1>Nolan Groves — Resume</h1>
+    <nav class="links">
+      <a href="Resume_Visual.pdf" download>Download (Visual)</a>
+      <a href="Resume_ATS.pdf" download>Download (ATS / plain text)</a>
+    </nav>
+  </header>
+  <embed src="Resume_Visual.pdf" type="application/pdf">
+</body>
 </html>
